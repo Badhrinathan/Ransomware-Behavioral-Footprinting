@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Predict - Ransomware Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{% if result %}{{ 'benign' if 'Benign' in result else 'ransom' }}{% endif %}">
+    <nav class="navbar">
+        <div class="nav-left">Ransomware Detector</div>
+        <div class="nav-right">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container center">
+        <h2>System Metric Input</h2>
+        <form method="POST">
+            <input type="text" name="input_line" placeholder="CPU,RAM,Temp,DiskRead,DiskWrite,NetworkOut,PID" required><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+            <div class="result-box {% if 'Benign' in result %}benign-result{% else %}ransom-result{% endif %}">
+                <h3>{{ result }}</h3>
+                <details>
+                    <summary>View More</summary>
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Algorithm</th>
+                                <th>Detection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CatBoost</td>
+                                <td>{{ pred_cat }}</td>
+                            </tr>
+                            <tr>
+                                <td>Isolation Forest</td>
+                                <td>{{ pred_if }}</td>
+                            </tr>
+                            <tr>
+                                <td>LSTM</td>
+                                <td>{{ pred_lstm }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+

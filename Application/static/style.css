@@ -1,0 +1,102 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ECEFCA;
+    color: #213448;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #213448;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Input and Button Styling */
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #547792;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #213448;
+}
+
+/* Result Box Styling */
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Color-coded result boxes */
+.benign-result {
+    background-color: #d0e8f2; /* Blue background for benign */
+    color: #0b2f48;
+    border: 2px solid #70a9d1;
+}
+
+.ransom-result {
+    background-color: #f8d7da; /* Red background for ransomware */
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+/* Table styling */
+.result-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.result-table th, .result-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.result-table th {
+    background-color: #547792;
+    color: white;
+}
+
+/* Error text */
+.error {
+    color: red;
+}

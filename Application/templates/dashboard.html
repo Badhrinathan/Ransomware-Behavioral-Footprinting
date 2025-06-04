@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard - Ransomware Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">Ransomware Detector</div>
+        <div class="nav-right">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container center">
+        <h2>Welcome, {{ username }}</h2>
+        <p>Ready to check your system metrics?</p>
+        <a href="{{ url_for('predict') }}"><button>Start Detection</button></a>
+    </div>
+</body>
+</html>
