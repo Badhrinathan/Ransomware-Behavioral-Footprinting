@@ -36,3 +36,23 @@ To run the application, execute:
 ```bash
 python app.py
 ```
+
+## Sample Logs
+
+### Benignware Behavioral Log
+
+```bash
+100.0,54.4,76.125,274.84,1149.54,19.39,15111
+```
+
+![Benignware Log](static/Output/benignware_log_test.jpg)
+
+### Ransomware Behavioral Log
+
+```bash
+88.8,49.7,82.375,128.43,5725.27,0.05,1826
+```
+![Ransomware Log](static/Output/Ransomware_log_test.png)
+
+---
+
